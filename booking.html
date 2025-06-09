@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Ansonika">
+    <title>PARADISE - Hotel and Bed&Breakfast Site Template</title>
+    
+    <!-- Favicons-->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="img/apple-touch-icon-57x57-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="img/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="img/apple-touch-icon-144x144-precomposed.png">
+
+    <!-- GOOGLE WEB FONT-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- BASE CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+	<link href="css/vendors.min.css" rel="stylesheet">
+
+    <!-- YOUR CUSTOM CSS -->
+    <link href="css/custom.css" rel="stylesheet">
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f5f5f5;
+        margin: 0;
+        padding: 0;
+    }
+
+    h2 {
+        max-width: 1000px;
+        margin: 100px auto 20px; /* 100px accounts for header and gap */
+        text-align: center;
+        font-weight: 600;
+        color: #333;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    form {
+        background: white;
+        padding: 40px;
+        max-width: 1000px;
+        margin: 20px auto;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        width: 48%; /* Two columns with gap */
+    }
+
+    label {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    input,
+    select,
+    textarea {
+        padding: 10px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        font-size: 14px;
+        font-family: inherit;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    textarea {
+        resize: vertical;
+    }
+
+    button {
+        margin-top: 20px;
+        padding: 12px;
+        width: 100%;
+        background: #007bff;
+        color: white;
+        border: none;
+        font-size: 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+    button:hover {
+        background: #0056b3;
+    }
+
+    @media (max-width: 768px) {
+        .form-group {
+            width: 100%;
+        }
+
+        form {
+            flex-direction: column;
+        }
+    }
+</style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-offset="120" data-bs-target="#mainNav"> 
+
+    <div id="preloader">
+        <div data-loader="circle-side"></div>
+    </div><!-- /Page Preload -->
+
+    <header class="fixed_header menu_v1">
+        <div class="layer"></div><!-- Opacity Mask -->
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-3 col-5">
+                    <a href="index.html" class="logo_normal"><img src="img/logo.png" width="135" height="45" alt="" class="img-fluid"></a>
+                    <a href="index.html" class="logo_sticky"><img src="img/logo.png" width="135" height="45" alt="" class="img-fluid"></a>
+                </div>
+                <div class="col-md-9 col-7">
+                    <div class="main-menu">
+                        <a href="#0" class="closebt open_close_menu"><i class="bi bi-x"></i></a>
+                        <div class="logo_panel"><img src="img/logo.png" width="135" height="45" alt=""></div>
+                        <nav id="mainNav">
+                            <ul>
+                             
+                                <li><a href="#rooms" class="js-scroll-trigger animated_link">Rooms</a></li>
+                                <li><a href="#gallery" class="js-scroll-trigger animated_link">Gallery</a></li>
+                                <li><a href="aboutus.html" class="js-scroll-trigger animated_link">About us</a></li>
+                                <li><a href="#contacts" class="js-scroll-trigger btn_1">Book Now</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="hamburger_2 open_close_menu float-end">
+                        <div class="hamburger__box">
+                            <div class="hamburger__inner"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- container -->
+    </header><!-- End Header -->
+ 
+    
+
+            
+       
+
+    <div class="form-container">
+   <h2>Hotel Room Booking Form</h2>
+
+<form action="/submit-booking" method="POST">
+    <div class="form-group">
+        <label for="fullname">Full Name</label>
+        <input type="text" id="fullname" name="fullname" placeholder="Your full name" required />
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="example@mail.com" required />
+    </div>
+
+    <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="+1 555 123 4567" required />
+    </div>
+
+    <div class="form-group">
+        <label for="checkin">Check-in Date</label>
+        <input type="date" id="checkin" name="checkin" required />
+    </div>
+
+    <div class="form-group">
+        <label for="checkout">Check-out Date</label>
+        <input type="date" id="checkout" name="checkout" required />
+    </div>
+
+    <div class="form-group">
+        <label for="roomtype">Room Type</label>
+        <select id="roomtype" name="roomtype" required>
+            <option value="" disabled selected>Select a room type</option>
+            <option value="single">Single Room</option>
+            <option value="double">Double Room</option>
+            <option value="suite">Suite</option>
+            <option value="deluxe">Deluxe Room</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="guests">Number of Guests</label>
+        <input type="number" id="guests" name="guests" min="1" max="10" value="1" required />
+    </div>
+
+    <div class="form-group" style="width: 100%;">
+        <label for="requests">Special Requests</label>
+        <textarea id="requests" name="requests" placeholder="Any special requests?" rows="3"></textarea>
+    </div>
+
+    <div style="width: 100%;">
+        <button type="submit">Book Now</button>
+    </div>
+</form>
+
+   
+  <footer style="position: relative; color: white; padding: 60px 20px 30px; overflow: hidden;">
+
+  <!-- Background Image -->
+  <img src="img/footerb-BZg9DzPK.jpg" alt="Footer Background" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+
+  <!-- Overlay Content -->
+  <div style="position: relative; z-index: 1;  padding: 40px 20px;">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1200px; margin: auto;">
+      
+      <!-- Navigation -->
+      <div style="flex: 1 1 200px; margin: 10px;">
+       <h3 style="color: white;">Home</h3>
+        <p><a href="#" style="color: white; text-decoration: none;">Rooms</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Gallery</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">About Us</a></p>
+      </div>
+
+      <!-- Help -->
+      <div style="flex: 1 1 200px; margin: 10px;">
+         <h3 style="color: white;">Help</h3>
+        <p><a href="#" style="color: white; text-decoration: none;">Customer Support</a></p>
+        <p><a href="https://www.google.com/maps/dir//540,Gangasiripura,Debarawewa,Tissamaharama82600/@6.27912,81.1820272,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3ae69d4adcb26561:0xc080ab4ea8362f9b!2m2!1d81.2644291!2d6.2791264?entry=ttu&g_ep=EgoyMDI1MDYwNC4wIKXMDSoASAFQAw%3D%3D" style="color: white; text-decoration: none;">Location</a></p>
+      </div>
+
+      <!-- Social Media -->
+      <div style="flex: 1 1 200px; margin: 10px;">
+      <h3 style="color: white;">Social Media</h3>
+        <p><a href="#" style="color: white; text-decoration: none;">Facebook</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Instagram</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">TikTok</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">YouTube</a></p>
+      </div>
+
+      <!-- Contact -->
+      <div style="flex: 1 1 200px; margin: 10px;">
+        <h3 style="color: white;">Contact</h3>
+        <p>Email: <a href="mailto:contact@elephanteye.com" style="color: white; text-decoration: none;">contact@elephanteye.com</a></p>
+        <p>Whatsapp: <a href="tel:+94707676750" style="color: white; text-decoration: none;">+94 70 767 6750</a></p>
+        <p>Tel: <a href="tel:+94472238902" style="color: white; text-decoration: none;">047 223 8902</a></p>
+      </div>
+
+    </div>
+
+    <!-- Copyright -->
+    <div style="text-align: center; font-size: 14px; margin-top: 30px;">
+      <p>All copyrights reserved by Elephant Eye - © 2024 All Rights Reserved.</p>
+      <p>Website Designed & Developed by <a href="https://wrenix.com" target="_blank" style="color: white; text-decoration: underline;">Wrenix (Pvt) Ltd</a></p>
+    </div>
+  </div>
+</footer>
+
+
+    <!--/copyright line -->
+
+    <!-- COMMON SCRIPTS -->
+    <script src="js/common_scripts.js"></script>
+    <script src="js/common_functions.js"></script>
+    <script src="js/datepicker_inline.js"></script>
+    <script src="phpmailer/validate.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/scrolling-nav.js"></script>
+
+</body>
+</html>
